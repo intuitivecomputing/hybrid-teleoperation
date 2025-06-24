@@ -60,7 +60,7 @@ The launch file accepts several arguments that allow you to customize its behavi
 
 ## Graphical User Interface
 <p align="left">
-  <img src="https://github.com/tclin0207/TIAGo-Teleoperation/blob/main/Figures/GUI.jpg" alt="image" alt="image" width="50%"/>
+  <img src="https://github.com/intuitivecomputing/hybrid-teleoperation/blob/main/figures/GUI.jpg" alt="image" alt="image" width="50%"/>
 </p>
 
 The GUI integrates a video stream, arm control states, and both back and top views of the robot’s mini model, displaying the robot’s arm pose, torso height, and surrounding obstacles. Red arrows indicate control inputs, with red lines for the torso’s vertical limits. The base is colored green or gray to signify “fast” or “slow” mode depending on whether the center of the base is within or outside the purple area.
@@ -69,7 +69,7 @@ The GUI integrates a video stream, arm control states, and both back and top vie
 
 ### HTC Vive
 <p align="left">
-  <img src="https://github.com/tclin0207/TIAGo-Teleoperation/blob/main/Figures/ViveMapping.jpg" alt="image" alt="image" width="50%"/>
+  <img src="https://github.com/intuitivecomputing/hybrid-teleoperation/blob/main/figures/ViveMapping.jpg" alt="image" alt="image" width="50%"/>
 </p>
 
 1. **Head Control**: After launching the interface, the motion of the HTC Vive headset will instantly map to control the robot's head (pan and tilt).
