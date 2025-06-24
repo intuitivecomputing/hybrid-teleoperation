@@ -39,7 +39,7 @@ In the second terminal, start the teleoperation
 ```bash
 Master
 IP
-cd tiago_dual_public_ws/
+cd ~/catkin_ws/
 source devel/setup.bash
 roslaunch vive_teleop vive_teleop.launch sim:=false rviz:=true record:=false
 ```
