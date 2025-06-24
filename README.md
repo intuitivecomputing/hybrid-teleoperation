@@ -32,7 +32,7 @@ The baseline control via hybrid interface allows the HTC Vive VR system to contr
 ### Ubuntu Side
 In the first terminal, build the connection between ROS and Unity
 ```bash
-ssh pal@10.68.0.1
+ssh pal@IP
 python3 ros_ws/src/socket_connection.py
 ```
 In the second terminal, start the teleoperation
