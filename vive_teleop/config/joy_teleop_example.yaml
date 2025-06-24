@@ -1,0 +1,115 @@
+teleop:
+  walk:
+    type: topic
+    message_type: geometry_msgs/Twist
+    topic_name: key_vel
+    deadman_buttons: [0]
+    axis_mappings:
+      -
+        axis: 1
+        target: linear.x
+        scale: 0.5
+        offset: -0.03
+      -
+        axis: 3
+        target: angular.z
+        scale: 0.5
+      -
+        axis: 0
+        target: linear.y
+        scale: 0.3
+      -
+        button: 2
+        target: linear.z
+        scale: 3.0
+
+  force_push:
+    type: topic
+    message_type: geometry_msgs/Wrench
+    topic_name: base_link_wrench
+    deadman_buttons: [5, 7]
+    axis_mappings:
+      -
+        axis: 3
+        target: force.x
+        scale: 40
+      -
+        axis: 2
+        target: force.y
+        scale: 40
+
+  stop_everything:
+    type: action
+    action_name: stop_joints
+    buttons: [4, 5, 6, 7]
+
+  torso_up:
+    type: action
+    action_name: /torso_controller/increment
+    action_goal:
+      increment_by: [0.05]
+    buttons: [4]
+
+  torso_down:
+    type: action
+    action_name: /torso_controller/increment
+    action_goal:
+      increment_by: [-0.05]
+    buttons: [5]
+
+  stop:
+    type: topic
+    message_type: geometry_msgs/Twist
+    topic_name: key_vel
+    deadman_buttons: [2]
+    message_value:
+      -
+        target: linear.x
+        value: 0.0
+      -
+        target: angular.z
+        value: 0.0
+      -
+        target: linear.y
+        value: 0.0
+    # We don't want to have the walk buttons pressed
+    # to avoid publishing with different intentions
+    allow_multiple_commands: False
+
+  gripper_control_close:
+    type: action
+    action_name: /parallel_gripper_left_controller/follow_joint_trajectory
+    action_goal:
+      trajectory:
+        joint_names:
+          - gripper_left_left_finger_joint
+          - gripper_left_right_finger_joint
+        points:
+          - positions: [0.01, 0.01]
+            velocities: []
+            accelerations: []
+            effort: []
+            time_from_start: {secs: 2, nsecs: 0}
+    axis_mappings:
+      -
+        axis: 5
+        target: points.positions[0]
+        scale: 0.02
+        offset: 0.02
+
+  # gripper_control_open:
+  #   type: action
+  #   action_name: /parallel_gripper_left_controller/follow_joint_trajectory
+  #   action_goal:
+  #     trajectory:
+  #       joint_names:
+  #         - gripper_left_left_finger_joint
+  #         - gripper_left_right_finger_joint
+  #       points:
+  #         - positions: [0.04, 0.04]
+  #           velocities: []
+  #           accelerations: []
+  #           effort: []
+  #           time_from_start: {secs: 4, nsecs: 0}
+  #   buttons: [1]
+

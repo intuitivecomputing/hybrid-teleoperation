@@ -1,0 +1,41 @@
+<launch>
+    <!-- task 1: clean up table -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_task1_yellow_can" args="1.726 0.247 0.785 0 0 0 0 odom task1_yellow_can"/>
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_task1_yellow_target" args="0.867 0.793 1.261 0.732 0.680 0.026 -0.024 odom task1_yellow_target"/>
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_task1_orange_can" args="1.334 -0.355 0.514 1.000 0.022 -0.003 0.001 odom task1_orange_can"/>
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_task1_orange_target" args="0.991 0.762 0.427 0.696 0.717 0.025 -0.025 odom task1_orange_target"/>
+
+    <!-- task 2: medicine delivery -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_task2_lower" args="0.141 0.837 0.772 0.809 0.578 0.086 -0.061 odom task2_upper"/>
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_task2_upper" args="0.265 0.850 1.107 0.516 0.854 0.033 -0.053 odom task2_lower"/>
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_task2_target" args="-0.309 -0.755 0.739 0.717 -0.697 0.023 0.023 odom task2_target"/>
+
+    <!-- task 3: pour water -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_task3_water_bottle" args="1.726 0.15 0.8 1.000 0.022 -0.003 0.001 odom task3_water_bottle"/>
+    
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_task3_target" args="-0.38 -0.755 0.8 0.717 -0.697 0.023 0.023 odom task3_target"/>
+
+
+    <!-- task 4: laundry -->
+        <!-- Publish static transform from odom to hat -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_task4_hat" args="-0.599 0.488 0.496 0.001 0.731 0.682 0.006 odom task4_hat"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_task4_hat_target" args="0.039 -0.666 0.549 0.719 -0.691 -0.051 -0.049 odom task4_hat_target"/>
+
+        <!-- Publish static transform from odom to clothes -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_task4_clothes" args="-0.589 0.087 0.467 0.001 0.731 0.682 0.006 odom task4_clothes"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_task4_clothes_target" args="0.039 -0.666 0.549 0.719 -0.691 -0.051 -0.049 odom task4_clothes_target"/>
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_task4_basket_right_handle" args="0.08 -0.859 0.40 0.723 -0.691 0.014 0.014 odom task4_basket_right_handle"/>
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_task4_basket_left_handle" args="0.8 -0.825 0.40 -0.671 0.741 0.028 -0.014 odom task4_basket_left_handle"/>
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_task4_basket_right_target" args="1.371 -0.796 0.848 1.000 0.013 -0.011 0.001 odom task4_basket_right_target"/>
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_task4_basket_left_target" args="1.383 -0.022 0.842 0.998 -0.051 -0.010 0.029 odom task4_basket_left_target"/>
+
+</launch>
